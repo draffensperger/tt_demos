@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'type_tracer'
 require 'type_tracer/rspec/instance_double_arg_checker'
 
 module NoMethodOnStub
@@ -24,7 +25,7 @@ module NoMethodOnArg
       GreetingApp.run
 
       expect(Greeter).to have_received(:new).with(STDOUT)
-      # expect that the greeter receives nil for the default language
+      # greeter receives nil for the default language
       expect(greeter).to have_received(:greet).with(nil)
     end
   end
