@@ -1,4 +1,6 @@
-require 'spec_helper'
+require 'simplecov'
+SimpleCov.start
+require 'tt_demos/arg_checked_double/no_method_on_stub'
 
 module NoMethodOnStub
   describe GreetingApp, '.run' do
