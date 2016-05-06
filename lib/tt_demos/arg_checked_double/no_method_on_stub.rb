@@ -1,7 +1,7 @@
 module NoMethodOnStub
   class GreetingApp
     def self.run
-      Greeter.new(STDOUT).say_hello
+      Greeter.new(STDOUT).say_hi
     end
   end
 
@@ -11,7 +11,7 @@ module NoMethodOnStub
     end
 
     def greet
-      @stream.puts("Hello!")
+      @stream.puts("Hi!")
     end
   end
 end
