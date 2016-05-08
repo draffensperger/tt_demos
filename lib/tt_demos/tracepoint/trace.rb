@@ -9,6 +9,9 @@ TracePoint.trace(:call) do |t|
     val = t.binding.local_variable_get(var)
     puts "    #{var}: #{val.inspect}"
   end
+
+  puts '    Call stack:'
+  caller.each { |c| puts "       #{c}" }
 end
 
 TracePoint.trace(:return) do |t|
