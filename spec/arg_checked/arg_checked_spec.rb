@@ -4,7 +4,7 @@ require 'type_tracer/rspec/'\
 
 module NoMethodOnArg
   describe GreetingApp, '.run' do
-    it 'greets with default language' do
+    it 'greets in default language' do
       greeter =
         instance_double(Greeter,
                         greet: nil)
@@ -13,9 +13,6 @@ module NoMethodOnArg
 
       GreetingApp.run
 
-      expect(Greeter)
-        .to have_received(:new)
-        .with(STDOUT)
       # gets nil for default language
       expect(greeter)
         .to have_received(:greet)

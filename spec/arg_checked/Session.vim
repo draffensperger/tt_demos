@@ -74,7 +74,7 @@ exe s:l
 normal! zt
 8
 normal! 07|
-tabnext 1
+tabnext 3
 set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

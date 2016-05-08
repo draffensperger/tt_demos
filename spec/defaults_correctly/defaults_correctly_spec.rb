@@ -4,7 +4,7 @@ require 'type_tracer/rspec/'\
 
 module DefaultsCorrectly
   describe GreetingApp, '.run' do
-    it 'greets with default language' do
+    it 'greets in default language' do
       greeter =
         instance_double(Greeter,
                         greet: nil)
@@ -13,11 +13,7 @@ module DefaultsCorrectly
 
       GreetingApp.run
 
-      expect(Greeter)
-        .to have_received(:new)
-        .with(STDOUT)
-      # greeter receives nil for the
-      # default language
+      # gets nil for default language
       expect(greeter)
         .to have_received(:greet)
         .with(nil)

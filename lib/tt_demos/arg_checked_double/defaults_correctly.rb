@@ -3,7 +3,7 @@ module DefaultsCorrectly
     def self.run
       # give nil for the default language
       language = nil
-      Greeter.new(STDOUT).greet(language)
+      Greeter.new.greet(language)
     end
   end
 
@@ -11,17 +11,11 @@ module DefaultsCorrectly
     HELLOS = { english: 'Hello',
                german: 'Hallo' }
 
-    def initialize(stream)
-      @stream = stream
-    end
-
     def greet(language)
       # if nil, default to German since
       # we're marketing to Berlin startups
       language ||= :german
-
-      hello = HELLOS[language.to_sym]
-      @stream.puts("#{hello}!")
+      puts("#{HELLOS[language.to_sym]}!")
     end
   end
 end
