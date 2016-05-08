@@ -1,9 +1,9 @@
 module NoMethodOnArg
   class GreetingApp
     def self.run
-      # give nil for the default language
+      # give nil for default language
       language = nil
-      Greeter.new(STDOUT).greet(language)
+      Greeter.new.greet(language)
     end
   end
 
@@ -11,14 +11,10 @@ module NoMethodOnArg
     HELLOS = { english: 'Hello',
                german: 'Hallo' }
 
-    def initialize(stream)
-      @stream = stream
-    end
-
     def greet(language)
-      # language can be a string or symbol
+      # language can be string or symbol
       hello = HELLOS[language.to_sym]
-      @stream.puts("#{hello}!")
+      puts("#{hello}!")
     end
   end
 end

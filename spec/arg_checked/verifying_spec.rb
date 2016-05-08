@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'type_tracer/rspec/'\
-  'instance_double_arg_checker'
 
 module NoMethodOnArg
   describe GreetingApp, '.run' do
@@ -8,14 +6,11 @@ module NoMethodOnArg
       greeter =
         instance_double(Greeter,
                         greet: nil)
-      allow(Greeter)
-        .to receive(:new) { greeter }
+      allow(Greeter).to receive(:new)
+        .and_return(greeter)
 
       GreetingApp.run
 
-      expect(Greeter)
-        .to have_received(:new)
-        .with(STDOUT)
       # greeter receives nil for the
       # default language
       expect(greeter)
