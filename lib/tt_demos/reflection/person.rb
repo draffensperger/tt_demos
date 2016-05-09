@@ -11,3 +11,11 @@ class Person
     "I'm #{@name}"
   end
 end
+
+=begin
+irb
+load('person.rb')
+m = Person.instance_method(:say_hi)
+m.source_location
+m.parameters
+=end

@@ -18,3 +18,6 @@ user.intro(:foo)
 
 x = 1
 x.downcase
+=begin
+ruby-lint example.rb
+=end

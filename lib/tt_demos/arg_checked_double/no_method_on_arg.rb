@@ -18,3 +18,7 @@ module NoMethodOnArg
     end
   end
 end
+=begin
+bundle console
+NoMethodOnArg::GreetingApp.run
+=end
