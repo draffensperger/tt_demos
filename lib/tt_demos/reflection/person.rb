@@ -18,4 +18,6 @@ load('person.rb')
 m = Person.instance_method(:say_hi)
 m.source_location
 m.parameters
+Person.method_defined?(:intro)
+Person.method_defined?(:greet)
 =end
