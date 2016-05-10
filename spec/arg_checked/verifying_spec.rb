@@ -1,5 +1,4 @@
-require 'spec_helper'
-
+ku
 describe GreetingApp, '.run' do
   it 'greets with default language' do
     greeter = instance_double(Greeter,
