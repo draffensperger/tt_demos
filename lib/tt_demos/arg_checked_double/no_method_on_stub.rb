@@ -15,3 +15,7 @@ module NoMethodOnStub
     end
   end
 end
+=begin
+bundle console
+NoMethodOnStub::GreetingApp.run
+=end
